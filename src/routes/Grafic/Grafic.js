@@ -25,14 +25,14 @@ function Grafic() {
   const [dataTThe4, setDataTThe4] = useState([]);
 
   const columns = [
-    { type: 'date', label: 'Time' },
+    { type: 'datetime', label: 'Time' },
     { type: 'number', label: 'Temp' },
   ];
 
   const options = {
     hAxis: {
       title: 'Time',
-      format: 'yyyy',
+      format: 'yyyy/MM/dd',
       titleTextStyle: { color: 'black', fontSize: 22, bold: true },
       viewWindowMode: 'explicit',
     },
@@ -138,8 +138,7 @@ function Grafic() {
       const hourAux = hour[index];
       const minAux = min[index];
 
-      const date = new Date(ageAux, dayAux, monthAux, hourAux, minAux, 0, 0);
-
+      const date = new Date(ageAux, monthAux, dayAux, hourAux, minAux, 0, 0);
       arrayAux.push([date, e]);
     });
 
